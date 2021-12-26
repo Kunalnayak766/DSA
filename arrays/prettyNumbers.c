@@ -1,5 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
+int Is_NumislesThanThree(int num)
+{
+    if (num < 3)
+        return 1;
+    else
+        return 0;
+}
 int Is_prime(int n)
 {
     for (int i = 2; i <= n / 2; i++)
@@ -13,13 +21,6 @@ int Is_prime(int n)
 
 int Is_pretty(int num)
 {
-    if (num <= 0)
-    {
-        return 0;
-    }
-
-    if (Is_prime(num))
-        return 1;
 
     if (num % 2 == 0)
     {
@@ -55,18 +56,27 @@ int main()
     do
     {
         num = ptr[i];
-        if (Is_pretty(num))
-        {
-            prety++;
-        }
-        else
+
+        if (Is_NumislesThanThree(num))
         {
             Not_prety++;
+            printf("lessThanThree\n");
         }
-
+        else if (Is_prime(num))
+        {
+            prety++;
+            printf("prime\n");
+        }
+        else if (Is_pretty(num))
+        {
+            prety++;
+            printf("pretty\n");
+        }
+        i++;
     } while (num != 0);
 
     printf("%d %d", prety, Not_prety);
 
+    getch();
     return 0;
 }
