@@ -72,11 +72,16 @@ int main()
             prety++;
             printf("pretty\n");
         }
+        else
+        {
+            printf("Ugly No\n");
+        }
         i++;
     } while (num != 0);
 
     printf("%d %d", prety, Not_prety);
 
     getch();
+
     return 0;
 }
