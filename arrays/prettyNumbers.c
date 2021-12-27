@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+
 int Is_NumislesThanThree(int num)
 {
     if (num < 3)
@@ -40,7 +41,11 @@ int Is_pretty(int num)
 
 int main()
 {
-    int num, size = 1, i = 0, prety = 0, Not_prety = 0;
+    freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+
+    int num,
+        size = 1, i = 0, prety = 0, Not_prety = 0;
     int *ptr = NULL;
     ptr = (int *)malloc(size * sizeof(int));
     do
@@ -60,28 +65,22 @@ int main()
         if (Is_NumislesThanThree(num))
         {
             Not_prety++;
-            printf("lessThanThree\n");
+           
         }
         else if (Is_prime(num))
         {
             prety++;
-            printf("prime\n");
+           
         }
         else if (Is_pretty(num))
         {
             prety++;
-            printf("pretty\n");
-        }
-        else
-        {
-            printf("Ugly No\n");
+           
         }
         i++;
     } while (num != 0);
 
     printf("%d %d", prety, Not_prety);
 
-    getch();
-
-    return 0;
+        return 0;
 }
